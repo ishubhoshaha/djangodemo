@@ -1,0 +1,16 @@
+{% extends "myapp/base.html" %}
+
+{% block title %}Information List{% endblock %}
+
+{% block content %}
+{% if persons %}
+<h2>Registered Person</h2>
+<div class="list-group">
+    {% for person in persons %}
+    <a href="/person/{{ person.id }}/" class="list-group-item" >{{ person.name }}</a>
+    {% endfor %}
+</div>
+{% else %}
+<p>No persons are available.</p>
+{% endif %}
+{% endblock %}
